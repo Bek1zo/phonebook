@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Корпоративный телефонный справочник</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"> </script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/search_light.css')}}" type="text/css" id="theme"/>
+    <script src="{{ url_for('static', filename='js/search.js') }}"> </script>
+</head>
+<body>
+
+<div class="my-bg wrapper w-full flex flex-col h-dvh">
+
+    <div class="flex grid-flow-col justify-between text-text-two h-1/6">
+        <div class="w-2/12"></div>
+        <span class="w-8/12 flex flex-col text-center justify-center uppercase tracking-widest font-mono text-bold font-bold text-3xl drop-shadow-md text-white text">
+              Корпоративный телефонный справочник
+      </span>
+        <div class="min-w-2/12 flex justify-end pr-5">
+            <div class="flex justify-center p-5 font-mono text-center flex-col relative r-0 text-white">
+                <span>{{ login }}</span>
+                <span>{{ email }}@corp.ru</span>
+            </div>
+            <div class="flex justify-center font-mono text-center m-auto w-16 h-16 rounded-full border-2">
+                <svg fill="#fff" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-j</title><path d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48ZM205.78,164.82C218.45,151.39,236.28,144,256,144s37.39,7.44,50.11,20.94C319,178.62,325.27,197,323.79,216.76,320.83,256,290.43,288,256,288s-64.89-32-67.79-71.25C186.74,196.83,193,178.39,205.78,164.82ZM256,432a175.49,175.49,0,0,1-126-53.22,122.91,122.91,0,0,1,35.14-33.44C190.63,329,222.89,320,256,320s65.37,9,90.83,25.34A122.87,122.87,0,0,1,382,378.78,175.45,175.45,0,0,1,256,432Z"></path></g></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-row h-4/6 border-2 p-10 overflow-auto bg-white overflow-x-hidden">
+        <div class="h-3/6 w-11/12 flex">
+            <div class="font-mono">
+                {% for row in result %}
+                    <div class="flex gap-20 w-full">
+
+                        {% for column in row %}
+                            {% autoescape false %}
+                                {{ column }}
+                            {% endautoescape %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {#        <pre class="structsubzone" name="structurez" style="display: block;"></pre>#}
+    </div>
+
+    <div class="findzone flex flex-col h-1/6 p-5 bg-white overflow-auto">
+        ...
+    </div>
+
+    <div class="bottom-0 p-5">
+        <div class="flex flex-row justify-center">
+            <div class="w-11/12">
+                <input class="h-full w-full text-center font-mono keyword" name="keyword" placeholder="Введите текст..." type="text">
+                <label for="keyword">
+                </label>
+            </div>
+            <div class="flex justify-center gap-5 text-white">
+                <div title="Подразделения" class="flex justify-center" name="viewstruct">
+                    <button name="find" class="border-2 p-2">Поиск</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+<script>
+
+</script>
+
+<style>
+
+    .my-bg {
+        background: linear-gradient(to right, rgba(151, 27, 37, 0.8), rgba(94, 8, 18, 0.8)), url('../static/common-bg.svg')
+    }
+
+
+</style>

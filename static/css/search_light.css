@@ -1,0 +1,108 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');*/
+/* Обычный */
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+/* Жирный */
+@font-face {
+    font-family: 'Roboto bold';
+    src: url(../fonts/Roboto/Roboto-Bold.ttf);
+}
+
+/* Италик */
+@font-face {
+    font-family: 'Roboto italic';
+    src: url(../fonts/Roboto/Roboto-Italic.ttf);
+}
+
+/* Италик */
+@font-face {
+    font-family: 'Roboto italic bold';
+    src: url(../fonts/Roboto/Roboto-BoldItalic.ttf);
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /*overflow-x: hidden;*/
+    overflow: hidden;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+div.findzone {
+    height: 15%;
+    /*background: lightgray;*/
+    background: #d5d5d5;;
+    margin: 0;
+    border: 0 solid #000;
+    overflow: auto;
+    font-size: 16px;
+    line-height: 20px;
+    position: relative;
+    padding: 10px 40px;
+    box-shadow: inset 16px 16px 16px #9d9da1, inset -16px -16px 16px #fff;
+}
+
+.findzone a {
+    color: black;
+    display: grid;
+    grid-template-columns: 5% 25% 5% 5% 7% 53%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.findzone a div {
+    white-space: pre-line
+}
+
+.findzone a:visited {
+    color: #555;
+}
+
+.findzone a:link {
+    text-decoration: none;
+}
+
+div.searchzone {
+    height: 7%;
+    background: #f0edf1;
+    margin: 0;
+    padding: 0;
+    border: 0 solid #000;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchzone div p {
+    margin: 0;
+    padding: 0 15px;
+    color: #555;
+}
+
+
+
+span {
+    margin-left: 8px;
+}
+
+span.findElement {
+    padding: 0;
+    background: red;
+}
+
+span.selectedFindElement {
+    background: orange;
+}
